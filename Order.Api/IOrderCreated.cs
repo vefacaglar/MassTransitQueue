@@ -3,6 +3,6 @@
     public interface IOrderCreated
     {
         DateTime CreatedAt { get; }
-        int OrderId { get; }
+        Guid OrderId { get; }
     }
 }

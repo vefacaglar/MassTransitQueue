@@ -1,4 +1,5 @@
 using MassTransit;
+using Shipment.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,12 @@ builder.Services.AddMassTransit(x =>
         {
             h.Username("guest");
             h.Password("guest");
+        });
+
+        cfg.ReceiveEndpoint("stock-update", e =>
+        {
+            e.Consumer<StockUpdateConsumer>();
+            e.UseRateLimit(1000, TimeSpan.FromMinutes(1));
         });
 
         cfg.UseDelayedMessageScheduler();

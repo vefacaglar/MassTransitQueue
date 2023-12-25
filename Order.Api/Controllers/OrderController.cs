@@ -23,7 +23,7 @@ namespace Order.Api.Controllers
             {
                 Id = Guid.NewGuid(),
                 CreatedAt = DateTimeOffset.UtcNow,
-                OrderId = 1,
+                OrderId = Guid.NewGuid(),
             });
 
             return Ok();

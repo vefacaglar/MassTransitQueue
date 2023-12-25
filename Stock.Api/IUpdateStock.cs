@@ -2,7 +2,7 @@
 {
     public interface IUpdateStock
     {
-        int OrderId { get; }
+        Guid OrderId { get; }
         DateTime CreatedAt { get; }
     }
 }

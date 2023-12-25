@@ -18,7 +18,13 @@ namespace Order.Api
         {
             Console.WriteLine("consumed somethings {0}", context.Message.OrderId);
 
-            await _endpoint.Publish<IUpdateStock>(new
+            //await _endpoint.Publish<IUpdateStock>(new
+            //{
+            //    context.Message.OrderId,
+            //    CreatedAt = DateTime.UtcNow,
+            //});
+
+            await context.Publish<IUpdateStock>(new
             {
                 context.Message.OrderId,
                 CreatedAt = DateTime.UtcNow,
