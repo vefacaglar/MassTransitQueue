@@ -1,4 +1,5 @@
 ﻿using MassTransit;
+using MasstransitQueue.Application.Contracts;
 
 namespace Order.Api
 {

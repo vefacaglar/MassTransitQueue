@@ -1,4 +1,4 @@
-﻿namespace Stock.Api
+﻿namespace MasstransitQueue.Application.Contracts
 {
     public interface IUpdateStock
     {
